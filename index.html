@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple School E-Voting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Tutorial Screen -->
+        <div id="tutorial-screen" class="screen active">
+            <div class="card">
+                <h1><i class="fas fa-graduation-cap"></i> Welcome to School E-Voting</h1>
+                <p>E-voting makes elections secure, accessible, and efficient. Learn how it works!</p>
+                <div class="tutorial-content">
+                    <div class="tutorial-step">
+                        <i class="fas fa-user-check"></i>
+                        <h3>Step 1: Login</h3>
+                        <p>Use your student ID to access anonymously.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <i class="fas fa-vote-yea"></i>
+                        <h3>Step 2: Vote</h3>
+                        <p>Select candidates for each position.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Step 3: View Results</h3>
+                        <p>See live aggregated results.</p>
+                    </div>
+                </div>
+                <button id="start-voting" class="btn-primary">Start Voting</button>
+                <button id="toggle-mode" class="btn-secondary"><i class="fas fa-moon"></i> Dark Mode</button>
+            </div>
+        </div>
+
+        <!-- Login Screen -->
+        <div id="login-screen" class="screen">
+            <div class="card">
+                <h1><i class="fas fa-vote-yea"></i> School E-Voting</h1>
+                <p>Enter your Student ID to vote.</p>
+                <form id="login-form">
+                    <input type="text" id="student-id" placeholder="Student ID" required>
+                    <button type="submit" class="btn-primary">Login</button>
+                </form>
+                <button id="back-to-tutorial" class="btn-secondary">Back to Tutorial</button>
+            </div>
+        </div>
+
+        <!-- Voting Screen -->
+        <div id="voting-screen" class="screen">
+            <div class="card">
+                <h1><i class="fas fa-ballot-box"></i> Cast Your Votes</h1>
+                <div id="positions"></div>
+                <button id="submit-vote" class="btn-primary">Submit All Votes</button>
+                <button id="logout-btn" class="btn-secondary">Logout</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="card">
+                <h1><i class="fas fa-chart-bar"></i> Election Results</h1>
+                <div id="results"></div>
+                <button id="back-to-vote" class="btn-secondary">Back to Vote</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

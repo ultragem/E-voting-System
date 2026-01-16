@@ -1,0 +1,238 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+body.dark {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: #ecf0f1;
+}
+
+/* Screen Management */
+.screen {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Cards */
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+body.dark .card {
+    background: rgba(44, 62, 80, 0.95);
+    color: #ecf0f1;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: #4facfe;
+    margin-bottom: 20px;
+}
+
+body.dark h1 {
+    color: #ecf0f1;
+}
+
+h1 i {
+    margin-right: 10px;
+}
+
+/* Tutorial */
+.tutorial-content {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.tutorial-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(79, 172, 254, 0.1);
+    border-radius: 10px;
+}
+
+.tutorial-step i {
+    margin-right: 15px;
+    color: #4facfe;
+}
+
+.tutorial-step h3 {
+    margin: 0;
+    color: #4facfe;
+}
+
+/* Forms and Inputs */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+input {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #f8f9fa;
+    font-size: 1em;
+    transition: box-shadow 0.3s ease;
+}
+
+body.dark input {
+    background: #34495e;
+    color: #ecf0f1;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.3);
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ff6b6b, #ffa726);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(108, 117, 125, 0.1);
+    color: #6c757d;
+}
+
+body.dark .btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #bdc3c7;
+}
+
+.btn-secondary:hover {
+    background: rgba(108, 117, 125, 0.2);
+}
+
+/* Positions and Candidates */
+.position-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+body.dark .position-card {
+    background: rgba(44, 62, 80, 0.9);
+}
+
+.position-card:hover {
+    transform: translateY(-3px);
+}
+
+.candidate {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.candidate.selected {
+    background: rgba(79, 172, 254, 0.2);
+}
+
+.candidate img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* Results */
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .result-item {
+    background: rgba(44, 62, 80, 0.9);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(45deg, #ff6b6b, #ffa726);
+    transition: width 0.5s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .screen {
+        padding: 10px;
+    }
+    .card {
+        padding: 20px;
+    }
+    .tutorial-step {
+        flex-direction: column;
+        text-align: center;
+    }
+}
